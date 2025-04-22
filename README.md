@@ -11,6 +11,7 @@ Welcome to the User Registration and Login Application! This project is designed
 
 - [Code Description](#code-description)
     - [`PROG5121POE.java`](#prog5121poejava)
+    - [`PROG5121POETest.java`](#prog5121poetestjava)
 - [Usage](#usage)
 - [License](#license)
 - [Contact](#contact)
@@ -47,6 +48,87 @@ The **`PROG5121POE` class** is the heart of our application, organizing all the 
         - At least one number.
         - At least one special character.
     - Utilizing regular expressions with the `matches()` method of the `String` class, we can efficiently validate the password's strength. This ensures that users pick passwords that are tough for others to guess—keeping their accounts safe!
+ 
+**PROG5121POETest()**: This is the constructor for the test class! While it doesn’t hold any specific logic in this example, it’s typically used to establish any necessary conditions for the tests if needed.
+
+**@Test**: This annotation from the JUnit testing framework marks the following method as a test for the JUnit runner to execute.
+
+```java
+public PROG5121POE user1 = new PROG5121POE();
+```
+This line creates an instance of the PROG5121POE class, named `user1`. This object is what we’ll use to call the methods we’re testing.
+
+**public void testCheckUserNameEqualsCorrect() { ... }**:  
+- **Purpose**: This test method checks if the `checkUserName()` method in the PROG5121POE class accurately identifies a valid username.  
+- **Setup**: It sets the username of the `user1` object to "kyl_1".  
+- **Execution**: It calls the `checkUserName()` method with the set username and stores the outcome in the `result` variable. The expected value is set to true.  
+- **Assertion**: `assertEquals(result, expected);` This assertion from JUnit compares the `result` (the value returned by `checkUserName()`) to the expected value (true). If they don’t match, the test will fail.  
+- **Output**: The `System.out.println()` statements provide the result and expected values for your reference during test execution.  
+
+**public void testCheckUserNameEqualsIncorrect() { ... }**:  
+- **Purpose**: This method checks if the `checkUserName()` method correctly recognizes an invalid username.  
+- **Setup**: It sets `user1`'s username to "kyle!!!!!!!".  
+- **Execution**: Calls `checkUserName()` and captures the result. The expected value is set to false.  
+- **Assertion**: `assertEquals(result, expected);` This ensures that the result equals the expected value (false), and if they differ, the test fails.  
+- **Output**: Displays the result and expected values.  
+
+**public void testCheckUserNameTrue() { ... }**:  
+- **Purpose**: This test also checks for a valid username using `assertTrue()`.  
+- **Setup**: Sets `user1.username` to "kyl_1".  
+- **Execution**: Calls `checkUserName()` and stores the outcome in `result`.  
+- **Assertion**: `assertTrue(result);` This assertion checks if `result` is true; if it’s false, the test will fail.  
+- **Output**: Displays the result.  
+
+**public void testCheckUserNameFalse() { ... }**:  
+- **Purpose**: This test method checks for an invalid username using `assertFalse()`.  
+- **Setup**: Sets `user1.username` to "kyle!!!!!!".  
+- **Execution**: Calls `checkUserName()` and stores the result in `result`.  
+- **Assertion**: `assertFalse(result);` This checks if `result` is false, and if it’s true, the test fails.  
+- **Output**: Displays the result.  
+
+**public void testCheckPasswordComplexityEqualsCorrect() { ... }**:  
+- **Purpose**: This method checks if the `checkPasswordComplexity()` function accurately identifies a complex password.  
+- **Setup**: Sets `user1.password` to "Ch&sc&e@k9!".  
+- **Execution**: Calls `checkPasswordComplexity()` and stores the result in `result`. The expected value is set to true.  
+- **Assertion**: `assertEquals(result, expected);` This verifies whether `result` equals true.  
+- **Output**: Displays result and expected values.  
+
+**public void testCheckPasswordComplexityEqualsIncorrect() { ... }**:  
+- **Purpose**: This method checks if `checkPasswordComplexity()` recognizes a simple password.  
+- **Setup**: Sets `user1.password` to "password".  
+- **Execution**: Calls `checkPasswordComplexity()` and captures the result in `result`. The expected value is set to false.  
+- **Assertion**: `assertEquals(result, expected);` Ensures that `result` equals false.  
+- **Output**: Displays the result and expected.  
+
+**public void testCheckPasswordComplexityTrue() { ... }**:  
+- **Purpose**: This method tests for a complex password using `assertTrue()`.  
+- **Setup**: Sets `user1.password` to "Ch&sc&e@k9!".  
+- **Execution**: Calls `checkPasswordComplexity()` and stores the result in `result`.  
+- **Assertion**: `assertTrue(result);` Checks if the result is true.  
+- **Output**: Displays the result.  
+
+**public void testCheckPasswordComplexityFalse() { ... }**:  
+- **Purpose**: This method tests for a simple password using `assertFalse()`.  
+- **Setup**: Sets `user1.password` to "password".  
+- **Execution**: Calls `checkPasswordComplexity()` and captures the result in `result`.  
+- **Assertion**: `assertFalse(result);` Checks if the result is false.  
+- **Output**: Displays the result.  
+
+**public void testCheckCellPhoneNumberEqualsCorrect() { ... }**:  
+- **Purpose**: This method checks if `checkCellPhoneNumber()` accurately identifies a correctly formatted cell phone number.  
+- **Setup**: Sets `user1.cellPhoneNumber` to "+27839869876".  
+- **Execution**: Calls `checkCellPhoneNumber()` and stores the result in `result`, which expects a true value.  
+- **Assertion**: `assertEquals(result, expected);` This checks if `result` equals true.  
+- **Output**: Displays the result and expected values.  
+
+**public void testCheckCellPhoneNumberEqualsIncorrect() { ... }**:  
+- **Purpose**: This method checks if `checkCellPhoneNumber()` identifies an incorrectly formatted cell phone number.  
+- **Setup**: Sets `user1.cellPhoneNumber` to "0896553".  
+- **Execution**: Calls `checkCellPhoneNumber()` and stores the result.  
+- **Assertion**: Similar to the previous tests, it checks if the formatting is correct.  
+- **Output**: Captures and displays the result for review.  
+
+In summary, each of these methods is structured to make sure the `checkUserName()`, `checkPasswordComplexity()`, and `checkCellPhoneNumber()` methods work as intended, allowing for efficient and effective validation of user input in our software! Keep up the great work with your testing!
 
 Overall, this project is built with user experience and security in mind, making it not only functional but also a pleasure to use. If you have any questions or want to dive deeper into any section, feel free to ask!
 
