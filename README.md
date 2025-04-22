@@ -48,7 +48,10 @@ The **`PROG5121POE` class** is the heart of our application, organizing all the 
         - At least one number.
         - At least one special character.
     - Utilizing regular expressions with the `matches()` method of the `String` class, we can efficiently validate the password's strength. This ensures that users pick passwords that are tough for others to guess—keeping their accounts safe!
- 
+
+
+### `PROG5121POETest.java`
+
 **PROG5121POETest()**: This is the constructor for the test class! While it doesn’t hold any specific logic in this example, it’s typically used to establish any necessary conditions for the tests if needed.
 
 **@Test**: This annotation from the JUnit testing framework marks the following method as a test for the JUnit runner to execute.
@@ -140,5 +143,10 @@ Lecturer Yolanda. 2024. *PROG5121 Lecture Notes: Chapter 1 Creating Java Program
 
 Lecturer Yolanda. 2024. *PROG5121 Lecture Notes: Chapter 3 Using Methods, Classes, and Objects* [2, 9, 12, 15]. The Independent Institute of Education.
 
-OpenAI. (2023). *ChatGPT (Mar 14 version)* 
+ChatApp (Version 1.0) [Mobile app]. Available at: App Store [Accessed 22 April 2025].
+
+OpenAI. (2023). *ChatGPT (Mar 14 version) [Accessed 22 April 2025].
+
+Grammarly, 2023. Grammarly [online]. Available at: <https://www.grammarly.com> [Accessed 22 April 2025].
+* 
 
