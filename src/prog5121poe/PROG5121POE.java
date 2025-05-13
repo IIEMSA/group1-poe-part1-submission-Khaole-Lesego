@@ -5,6 +5,8 @@ import java.util.Scanner; // Imports the Scanner class for user input handling.
 public class PROG5121POE { // Main class for the program, containing user registration and login functionalities.
     
     // Private variables to hold user information.
+    public String Firstname; // Stores the first name of the user.
+    public String Surname; // Stores the surname of the user.
     public String username; // Stores the username of the user.
     public String password; // Stores the password of the user.
     public String cellPhoneNumber; // Stores the cell phone number of the user.
@@ -74,7 +76,10 @@ public class PROG5121POE { // Main class for the program, containing user regist
     // Method to register a new user by collecting input.
     public void registerUser() {
         System.out.println("Welcome To Registrations!");
-        
+        System.out.println("Please enter your first name:");
+            Firstname = input.nextLine();// Reads Firstname input from the user.
+        System.out.println("Please enter your surname:");
+            Surname = input.nextLine();// Reads Surname input from the user.
         // Loop to validate username input.
         do {
             System.out.println("Please enter a valid username:");
@@ -99,10 +104,10 @@ public class PROG5121POE { // Main class for the program, containing user regist
    
     // Method to log in the user by checking credentials.
     public boolean loginUser() {
-        System.out.print("Login user: ");
+        System.out.print("Please enter registered username: ");
         inputUserName = input.nextLine(); // Reads username input for login.
       
-        System.out.print("Login pass: ");
+        System.out.print("Please enter registered password: ");
         inputPassword = input.nextLine(); // Reads password input for login.
     
         // Check if the entered username and password match the registered username and password.
@@ -112,17 +117,34 @@ public class PROG5121POE { // Main class for the program, containing user regist
         } else {
             isLoggedIn = false; // Set login status to false if credentials do not match.
             return false; // Login failed.
+            
         }
+         
     }
+    
+    public void loginUserRetry() {
+    // Loop until login is successful
+    while (!this.loginUser()) {
+        System.out.println(this.returnLoginStatus());
+    }
+    // Once successful, show the welcome message
+    System.out.println(this.returnLoginStatus());
+}
+
+    
+    
 
     // Method to return the login status message based on the user's login state.
     public String returnLoginStatus() {
+        
         System.out.println("Searching for User...");
         // Returns a welcome message if the user is logged in, otherwise prompts to try again.
         if (isLoggedIn) {
-            return "Welcome " + username + "; it's great to see you again."; // Successful login message.
+            return "Welcome " + username +"("+ Firstname +" "+ Surname +")"+ "; it's great to see you again."; // Successful login message.
         } else {
+            
             return "Username or password incorrect; please try again."; // Failed login message.
+            
         }
     }
 
@@ -131,7 +153,6 @@ public class PROG5121POE { // Main class for the program, containing user regist
         PROG5121POE user = new PROG5121POE(); // Creates an instance of the PROG5121POE class.
 
         user.registerUser(); // Calls the method to register a new user.
-        user.loginUser(); // Calls the method to log in the user.
-        System.out.println(user.returnLoginStatus()); // Displays the login status message.
+        user.loginUserRetry();// Calls the method for retry in the user.
     }
 }

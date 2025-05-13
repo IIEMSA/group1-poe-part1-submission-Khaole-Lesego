@@ -67,6 +67,7 @@ public class PROG5121POETest { // This class will hold all our tests for the PRO
         assertEquals(result, expected); // Check if actual equals expected.
         System.out.println("Result: " + result);
         System.out.println("Expected: " + expected);
+       
     }
 
     // Test to check if an invalid password is handled correctly.
@@ -199,6 +200,7 @@ public class PROG5121POETest { // This class will hold all our tests for the PRO
    
    
    
+
 
    
 
