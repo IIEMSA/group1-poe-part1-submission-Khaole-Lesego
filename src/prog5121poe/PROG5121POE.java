@@ -150,9 +150,8 @@ public class PROG5121POE { // Main class for the program, containing user regist
 
     // Main method to execute the program.
     public static void main(String[] args) {
-        PROG5121POE user = new PROG5121POE(); // Creates an instance of the PROG5121POE class.
-
-        user.registerUser(); // Calls the method to register a new user.
-        user.loginUserRetry();// Calls the method for retry in the user.
+        PROG5121POE user = new PROG5121POE(); // Creates an instance of the PROG5121POE class!
+        user.registerUser(); // Calls the method to register a new user!
+        user.loginUserRetry();// Calls the method for retry in the user!
     }
 }
